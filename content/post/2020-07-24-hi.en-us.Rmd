@@ -1,0 +1,37 @@
+---
+title: 연습글
+author: ''
+date: '2020-07-24'
+slug: hi.en-us
+categories: []
+tags: []
+keywords:
+  - tech
+thumbnailImage: 
+thumbnailImagePosition: left
+---
+안녕하세요 반갑습니다.
+장연훈의 이미지 입니다.
+
+<!--more-->
+
+여기는 더 보기 다음입니다.
+
+{{< alert info >}} <br>
+Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
+{{< /alert >}}
+
+{{< alert success >}}
+Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
+{{< /alert >}}
+
+{{< alert warning >}}
+Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
+{{< /alert >}}
+
+{{< alert danger >}}
+Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
+{{< /alert >}}
+
+** block quote **
+> Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
