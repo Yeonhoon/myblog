@@ -10,8 +10,16 @@ keywords:
 thumbnailImage: 
 thumbnailImagePosition: left
 ---
+
+
 안녕하세요 반갑습니다.
 장연훈의 이미지 입니다.
+
+```{r echo=FALSE, eval=FALSE, include=TRUE}
+library(DT)
+datatable(mtcars, rownames = FALSE, filter="top", options = list(pageLength = 5, scrollX=T) )
+```
+
 
 <!--more-->
 

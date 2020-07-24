@@ -14,6 +14,7 @@
           {{ range $paginator.Pages }}
             {{ .Render "summary" }}
           {{ end }}
+          
           {{ partial "pagination.html" . }}
         </section>
         {{ partial "footer.html" . }}

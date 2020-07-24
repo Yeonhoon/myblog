@@ -36,10 +36,10 @@
   translation: "RSS"
 
 - id: "global.search_category"
-  translation: "Search category"
+  translation: "카테고리 검색"
 
 - id: "global.search_tag"
-  translation: "Search tag"
+  translation: "태그 검색"
 
 - id: "global.search_date"
   translation: "Search date (YYYY/MM/DD)"
