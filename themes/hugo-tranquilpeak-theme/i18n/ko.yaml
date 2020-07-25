@@ -88,10 +88,10 @@
   translation: "이전 글"
 
 - id: "pagination.previous"
-  translation: "이전"
+  translation: "다음 글"
 
 - id: "pagination.next"
-  translation: "다음"
+  translation: "이전 글"
 
 ## POST ##
 - id: "post.no_title"
@@ -101,7 +101,7 @@
   translation: "in"
 
 - id: "post.tagged_in"
-  translation: "TAGGED IN"
+  translation: "태그"
 
 - id: "post.toc"
   translation: "Table of Contents"
