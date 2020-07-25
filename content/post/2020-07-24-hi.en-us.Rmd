@@ -7,39 +7,69 @@ categories: []
 tags: []
 keywords:
   - tech
-thumbnailImage: 
+thumbnailImage: https://seekonkspeedway.com/wp-content/uploads/2020/06/practice-1080x640.jpg
 thumbnailImagePosition: left
+summary: "안녕하세요 반갑습니다.장연훈의 이미지 입니다."
+showTags: true
+showPagination: true
+showSocial: true
+showDate: true
+output:
+  html_document:
+    code_folding: "hide"
+    toc: true
+    toc_float: yes
 ---
 
 
-안녕하세요 반갑습니다.
-장연훈의 이미지 입니다.
 
-```{r echo=FALSE, eval=FALSE, include=TRUE}
+```{r echo=F, eval=FALSE, include=TRUE}
 library(DT)
 datatable(mtcars, rownames = FALSE, filter="top", options = list(pageLength = 5, scrollX=T) )
+
 ```
 
 
 <!--more-->
 
-여기는 더 보기 다음입니다.
+## 여기는 더 보기 다음입니다.
 
-{{< alert info >}} <br>
-Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
-{{< /alert >}}
+링크 타고 이동하기 [links](https://www.naver.com/)
 
-{{< alert success >}}
-Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
-{{< /alert >}}
+***
 
-{{< alert warning >}}
-Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
-{{< /alert >}}
 
-{{< alert danger >}}
-Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
-{{< /alert >}}
+> 안녕하세요.
+> 반갑습니다.
+
+연습중
+<br><br><br>
+
+### 플랏 두개
+```{r out.width=c('50%', '50%'), fig.show='hold'}
+boxplot(1:10)
+plot(rnorm(10))
+```
 
 ** block quote **
 > Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.
+
+```{r warning=F, message=F, eval=T, echo=T}
+library(DT)
+datatable(mtcars, rownames = FALSE, filter="top", options = list(pageLength = 5, scrollX=T) )
+
+```
+
+
+
+## 부분적으로 색상 바꾸기.
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+- This is my first conclusion
+- This is my second conclusion
+
+</div>
+

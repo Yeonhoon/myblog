@@ -3,222 +3,227 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jangci.netlify.app/</loc>
+    <loc>https://jangcci.netlify.app/categories/</loc>
+    <lastmod>2020-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jangcci.netlify.app/</loc>
+    <lastmod>2020-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jangcci.netlify.app/post/</loc>
+    <lastmod>2020-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jangcci.netlify.app/categories/r/</loc>
+    <lastmod>2020-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jangcci.netlify.app/2020/07/r-markdown-%EC%97%B0%EC%8A%B5/</loc>
+    <lastmod>2020-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jangcci.netlify.app/2020/07/hi.en-us/</loc>
     <lastmod>2020-07-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/post/</loc>
-    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jangci.netlify.app/2020/07/hi.en-us/</loc>
-    <lastmod>2020-07-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jangci.netlify.app/categories/</loc>
+    <loc>https://jangcci.netlify.app/2015/07/hello-r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2015/07/hello-r-markdown/</loc>
+    <loc>https://jangcci.netlify.app/tags/plot/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/plot/</loc>
+    <loc>https://jangcci.netlify.app/tags/r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/categories/r/</loc>
+    <loc>https://jangcci.netlify.app/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/r-markdown/</loc>
+    <loc>https://jangcci.netlify.app/tags/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/regression/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jangci.netlify.app/tags/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jangci.netlify.app/tags/disqus/</loc>
+    <loc>https://jangcci.netlify.app/tags/disqus/</loc>
     <lastmod>2015-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/google-analytics/</loc>
+    <loc>https://jangcci.netlify.app/tags/google-analytics/</loc>
     <lastmod>2015-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/gravatar/</loc>
+    <loc>https://jangcci.netlify.app/tags/gravatar/</loc>
     <lastmod>2015-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/hexo-theme/</loc>
+    <loc>https://jangcci.netlify.app/tags/hexo-theme/</loc>
     <lastmod>2015-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/categories/releases/</loc>
+    <loc>https://jangcci.netlify.app/categories/releases/</loc>
     <lastmod>2015-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/responsive/</loc>
+    <loc>https://jangcci.netlify.app/tags/responsive/</loc>
     <lastmod>2015-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/categories/tranquilpeak/</loc>
+    <loc>https://jangcci.netlify.app/categories/tranquilpeak/</loc>
     <lastmod>2015-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2015/06/welcome-to-tranquilpeak-0.4.8-beta/</loc>
+    <loc>https://jangcci.netlify.app/2015/06/welcome-to-tranquilpeak-0.4.8-beta/</loc>
     <lastmod>2015-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2015/05/elements-showcase/</loc>
+    <loc>https://jangcci.netlify.app/2015/05/elements-showcase/</loc>
     <lastmod>2015-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/categories/features/</loc>
+    <loc>https://jangcci.netlify.app/categories/features/</loc>
     <lastmod>2015-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/html-elements/</loc>
+    <loc>https://jangcci.netlify.app/tags/html-elements/</loc>
     <lastmod>2015-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/markdown/</loc>
+    <loc>https://jangcci.netlify.app/tags/markdown/</loc>
     <lastmod>2015-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/cover-image/</loc>
+    <loc>https://jangcci.netlify.app/tags/cover-image/</loc>
     <lastmod>2015-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2015/05/cover-image-showcase/</loc>
+    <loc>https://jangcci.netlify.app/2015/05/cover-image-showcase/</loc>
     <lastmod>2015-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/github-theme/</loc>
+    <loc>https://jangcci.netlify.app/tags/github-theme/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/highlight-code/</loc>
+    <loc>https://jangcci.netlify.app/tags/highlight-code/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2015/03/highlighted-code-showcase/</loc>
+    <loc>https://jangcci.netlify.app/2015/03/highlighted-code-showcase/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/test/</loc>
+    <loc>https://jangcci.netlify.app/tags/test/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/tag-plugins/</loc>
+    <loc>https://jangcci.netlify.app/tags/tag-plugins/</loc>
     <lastmod>2014-10-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2014/10/tags-plugins-showcase/</loc>
+    <loc>https://jangcci.netlify.app/2014/10/tags-plugins-showcase/</loc>
     <lastmod>2014-10-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2014/08/hidden-social-section-showcase/</loc>
+    <loc>https://jangcci.netlify.app/2014/08/hidden-social-section-showcase/</loc>
     <lastmod>2014-08-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/social/</loc>
+    <loc>https://jangcci.netlify.app/tags/social/</loc>
     <lastmod>2014-08-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2014/08/hidden-tag-section-showcase/</loc>
+    <loc>https://jangcci.netlify.app/2014/08/hidden-tag-section-showcase/</loc>
     <lastmod>2014-08-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/tags/</loc>
+    <loc>https://jangcci.netlify.app/tags/tags/</loc>
     <lastmod>2014-08-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2014/08/hidden-pagination-showcase/</loc>
+    <loc>https://jangcci.netlify.app/2014/08/hidden-pagination-showcase/</loc>
     <lastmod>2014-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/pagination/</loc>
+    <loc>https://jangcci.netlify.app/tags/pagination/</loc>
     <lastmod>2014-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/dailymotion/</loc>
+    <loc>https://jangcci.netlify.app/tags/dailymotion/</loc>
     <lastmod>2014-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2014/08/video-integrations-showcase/</loc>
+    <loc>https://jangcci.netlify.app/2014/08/video-integrations-showcase/</loc>
     <lastmod>2014-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/videos-integration/</loc>
+    <loc>https://jangcci.netlify.app/tags/videos-integration/</loc>
     <lastmod>2014-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/vimeo/</loc>
+    <loc>https://jangcci.netlify.app/tags/vimeo/</loc>
     <lastmod>2014-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/youtube/</loc>
+    <loc>https://jangcci.netlify.app/tags/youtube/</loc>
     <lastmod>2014-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/tags/image-gallery/</loc>
+    <loc>https://jangcci.netlify.app/tags/image-gallery/</loc>
     <lastmod>2013-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/2013/02/image-gallery-showcase/</loc>
+    <loc>https://jangcci.netlify.app/2013/02/image-gallery-showcase/</loc>
     <lastmod>2013-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jangci.netlify.app/archives/</loc>
+    <loc>https://jangcci.netlify.app/archives/</loc>
   </url>
   
 </urlset>

@@ -3325,14 +3325,19 @@ a.fancybox {
 
 .postShorten-group .postShorten {
   margin-top   : 15px;
-  border-bottom: 1px solid #eef2f8
+  border-bottom: 1px solid #eef2f8;
+  font-family: 나눔바른고딕, 나눔고딕;
+  
 }
 
 .postShorten {
   position      : relative;
   width         : 100%;
   display       : inline-block;
-  vertical-align: top
+  vertical-align: top;
+  font-family: 나눔바른고딕, 나눔고딕;
+  
+  
 }
 
 .postShorten .postShorten-thumbnailimg {
@@ -3378,7 +3383,7 @@ a.fancybox {
 .postShorten .postShorten-excerpt {
   text-rendering: optimizelegibility;
   letter-spacing: -.3px;
-  font-family   : Merriweather, serif;
+  font-family   : 나눔바른고딕, 나눔고딕, Merriweather, serif;
   color         : #5d686f;
   font-weight   : 400;
   overflow      : hidden;
