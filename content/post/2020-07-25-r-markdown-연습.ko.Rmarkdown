@@ -9,7 +9,7 @@ tags: []
 keywords:
   - 
 summary: R markdown(.Rmarkdown) 연습 중입니다. 건드리지 마세요. 얘는 .Rmd랑 다른 놈입니다.
-thumbnailImage: https://lh3.googleusercontent.com/proxy/Hh9BKsUlNZTbV3Jd0oQs73vZaSeMcosSMovz0nZrx6iC4KVNqs0oTX1CHN66QUq0zrB3NEm2X0bIHrE_N1EfSdRmt-fkco19Osr0TT9TM3JqhCMhgdXwsUsc78Rnx9Wyy_w
+thumbnailImage: https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ferrari-sf90-stradale-spec-1-1566914261.jpg?crop=0.824xw:0.875xh;0.157xw,0&resize=640:*
 thumbnailImagePosition: right
 output:
   html_document:

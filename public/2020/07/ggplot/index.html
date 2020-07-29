@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.2 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="JangCci">
+<meta name="keywords" content="">
+<meta name="description" content="
+
+
+
+
+">
+
+
+<meta property="og:description" content="
+
+
+
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GGplot">
+<meta name="twitter:title" content="GGplot">
+<meta property="og:url" content="/2020/07/ggplot/">
+<meta property="twitter:url" content="/2020/07/ggplot/">
+<meta property="og:site_name" content="JangCci">
+<meta property="og:description" content="
+
+
+
+
+">
+<meta name="twitter:description" content="
+
+
+
+
+">
+<meta property="og:locale" content="ko">
+
+  
+    <meta property="article:published_time" content="2020-07-26T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2020-07-26T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="R">
+    
+  
+  
+    
+      <meta property="article:tag" content="ggplot">
+    
+      <meta property="article:tag" content="R">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//example.com/image.jpg">
+  <meta property="twitter:image" content="//example.com/image.jpg">
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/6ce16f6e5d4e76c17fc7cb7c3b398194?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/6ce16f6e5d4e76c17fc7cb7c3b398194?s=640">
+
+
+    <title>GGplot</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="/2020/07/ggplot/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">JangCci</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/6ce16f6e5d4e76c17fc7cb7c3b398194?s=90" alt="프로필 사진" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/6ce16f6e5d4e76c17fc7cb7c3b398194?s=110" alt="프로필 사진" />
+        </a>
+        <h4 class="sidebar-profile-name">JangCci</h4>
+        
+          <h5 class="sidebar-profile-bio">言行一致</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">홈</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">카테고리</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">태그</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">아카이브</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">소개</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/yeonhoon">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      GGplot
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-07-26T00:00:00Z">
+        
+  July 26, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/r">R</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>안녕하세요! 오늘은 R로 bar 차트를 그리는 방법에 대해 알아보겠습니다.</p>
+<pre class="r"><code>x &lt;- data.frame(
+  cell   = rep(c(&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;), each=3),
+  sample = c(&quot;x1&quot;, &quot;x2&quot;, &quot;x3&quot;, &quot;y1&quot;, &quot;y2&quot;, &quot;y3&quot;,&quot;z1&quot;,&quot;z2&quot;,&quot;z3&quot;),
+  weight = c(0.32, 0.33, 0.5, 0.42, 0.21, 0.67,0.43,0.73,0.81)
+) %&gt;% as_tibble()</code></pre>
+<p>보통 엑셀에서 바(bar) 차트를 그릴 때는 하나의 셀에 하나의 값이 대응되는 구조로 표를 구성합니다.</p>
+<p>그래서 저희도 X 변수와 Y 변수가 정해졌고, X 변수 값이 Y 변수의 값에 1:1 대응됐을 때 <br>
+차트를 그리는 방법에 대해서 얘기해보겠습니다.<br></p>
+<pre class="r"><code>g &lt;- ggplot(x, aes(x=sample , y = weight, fill= sample)) #fill: 색깔을 어떤 변수에 따라 다르게 할 것인가?
+g &lt;- g+ geom_bar(stat = &#39;identity&#39;) #theme(axis.text = element_text(angle = 30)) x축,y축 레이블이 길 경우 레이블을 회전시킬 수 있음.
+
+g</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="/post/2020-07-26-ggplot.ko_files/figure-html/unnamed-chunk-3-1.png" alt="기본 막대 그래프" width="2100" />
+<p class="caption">
+Figure 1: 기본 막대 그래프
+</p>
+</div>
+<p>ggplot을 이용한 함수 그리기는 다음의 구조와 같습니다.
+ggplot(“데이터 이름”, aes(x=“x변수”, y=“y변수”, fill=“바 색상을 담당할 변수”))</p>
+<p>참고로 바 차트가 아닌 선형 그래프나 점 그래프에서는 fill이 아니라 다른 값을 입력해야 합니다.
+이 부분은 다른 글에서 다루어 보겠습니다.</p>
+<hr>
+<p>이번에는 그룹별로 막대를 쌓는 그래프를 그려보겠습니다.<br>
+제가 예시로 사용하는 데이터에서는 X,Y,Z라는 3개의 그룹이 있습니다.
+X,Y,Z의 그룹으로 나누어 막대를 그려보겠습니다.</p>
+<pre class="r"><code>g &lt;- ggplot(x, aes(x=cell , y = weight, fill= sample)) #fill: 색깔을 어떤 변수에 따라 다르게 할 것인가?
+g &lt;- g+ geom_bar(stat = &#39;identity&#39;) #theme(axis.text = element_text(angle = 30)) x축,y축 레이블이 길 경우
+g</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="/post/2020-07-26-ggplot.ko_files/figure-html/unnamed-chunk-4-1.png" alt="막대를 위로 쌓는 그래프" width="2100" />
+<p class="caption">
+Figure 2: 막대를 위로 쌓는 그래프
+</p>
+</div>
+<p>위의 그래프와 이 그래프의 차이점은 <code>x</code>에 들어가는 변수와 <code>fill</code>에 들어가는 변수가 다르다는 것입니다.</p>
+<p>만약 y축의 총합이 단순 수치의 합이 아니라 전체 중 얼마나 비중을 차지하는지 그래프로 나타내기 위해서는 <br>
+<code>geom_bar()</code>함수에서 <code>position='fill'</code> 코드를 사용합니다.</p>
+<pre class="r"><code>g &lt;- ggplot(x, aes(x=cell , y = weight, fill= sample))
+
+g &lt;- g+ geom_bar(stat = &#39;identity&#39;, position = &#39;fill&#39;)
+
+g</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="/post/2020-07-26-ggplot.ko_files/figure-html/unnamed-chunk-5-1.png" alt="y축 총합이 1인 막대 그래프" width="2100" />
+<p class="caption">
+Figure 3: y축 총합이 1인 막대 그래프
+</p>
+</div>
+<p>이전 그래프와는 다르게 X,Y,Z라는 세 그룹의 막대가 모두 1을 기준으로 가득 찬 것을 볼 수 있습니다.<br>
+만약 Y축이 1이 아니라 0부터 100%까지를 나타내는 그래프를 나타내고 싶다면,<br>
+<code>scales_y_continuous()</code> 코드를 붙여주면 됩니다.</p>
+<pre class="r"><code>g&lt;-g + scale_y_continuous(labels = percent)
+g</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="/post/2020-07-26-ggplot.ko_files/figure-html/unnamed-chunk-6-1.png" alt="y축 단위를 %로 맞추기" width="2100" />
+<p class="caption">
+Figure 4: y축 단위를 %로 맞추기
+</p>
+</div>
+<p>세로 방향의 막대 그래프를, 가로방향으로 바꾸고 싶다면 <code>coord_flip()</code> 코드를 붙여줍니다.</p>
+<pre class="r"><code>g &lt;- g+ geom_bar(stat = &#39;identity&#39;, position = &#39;fill&#39;) + coord_flip()
+g</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="/post/2020-07-26-ggplot.ko_files/figure-html/unnamed-chunk-7-1.png" alt="가로 막대 그래프 만들기" width="2100" />
+<p class="caption">
+Figure 5: 가로 막대 그래프 만들기
+</p>
+</div>
+<div id="그래프-안에-수치-표시하기" class="section level2">
+<h2>그래프 안에 수치 표시하기</h2>
+<p>자 그러면 막대그래프를 그리는 방법은 어느 정도 배워보았습니다. 그렇다면 그래프 안에 수치는 어떻게 표시할 수 있을까요?</p>
+<p>다른 데이터를 활용해봅시다.</p>
+<pre><code>##   year value   group values
+## 1 2018  52.7     1.6  52.7%
+## 2 2018  35.4 1.6~2.5  35.4%
+## 3 2018  11.9     2.5  11.9%
+## 4 2020  45.0     1.6    45%
+## 5 2020  40.0 1.6~2.5    40%
+## 6 2020  15.0     2.5    15%</code></pre>
+<p>2018년도와 2020년에 3개의 그룹으로 구성이 되어 각 그룹이 몇 %를 차지하는지 나타내는 데이터입니다.
+2개년도별 각 그룹의 빈도를 보여주는 막대그래프를 만들고, 그 안에 각 그룹이 차지하는 수치를 넣어보겠습니다.</p>
+<pre class="r"><code>gg &lt;- ggplot(k, aes(x=year, y= value, fill=group))+
+  geom_bar(stat=&quot;identity&quot;, position=&quot;fill&quot;,width = 0.5)+
+  scale_y_continuous(labels = percent)+
+  theme(legend.position = &#39;right&#39;) + # 범례 위치 조정하기: bottom/ top / left/ right
+  geom_text(aes(label=values), position=position_fill(vjust = 0.5), colour=&quot;black&quot;) 
+gg</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="/post/2020-07-26-ggplot.ko_files/figure-html/unnamed-chunk-9-1.png" alt="막대 그래프에 수치 넣기" width="2100" />
+<p class="caption">
+Figure 6: 막대 그래프에 수치 넣기
+</p>
+</div>
+<p>여기서는 <code>geom_text()</code> 코드를 추가하였습니다. <code>label</code> 그러니까 차트 안에 수치를 어떤 변수로 넣을 것인지를 물어보는 것인데요. 저는 미리 만들어둔 values라는 기존 값에 ’%’를 붙여서 만든 변수를 label로 넣었습니다.</p>
+<p>또한 <code>position_fill</code>을 통해 수치를 표시해주십니다. <code>position_fill</code>인 이유는 코드 첫줄에서 볼 수 있듯이 <code>fill</code>이라는 코드로 그래프가 그려졌기 때문입니다. <code>vjust</code>는 label을 막대 어디에 위치시킬 것인지를 입력하는 코드입니다. 저는 각 막대의 정중앙에 위치시켰기 때문에 <code>vjust = 0.5</code>로 사용하였습니다. label의 색상은 <code>colour</code>를 통해 바꾸어줄 수 있습니다.</p>
+<p>그런데 저 그룹의 순서를 변경하여, ’1.6’인 그룹이 맨 아래로, ’2.5’인 그룹이 맨 위로 오게 할 수 있습니다. 우리는 계속 fill을 이용해 막대 그래프를 그리고 있으니 <code>scale_fill_discrete</code> 코드를 이용해야 합니다.</p>
+<pre class="r"><code>gg + scale_fill_discrete(breaks=c(&quot;2.5&quot;,&quot;1.6~2.5&quot;,&quot;1.6&quot;))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="/post/2020-07-26-ggplot.ko_files/figure-html/unnamed-chunk-10-1.png" alt="범례 순서변경을 통한 막대 위치 변경하기" width="2100" />
+<p class="caption">
+Figure 7: 범례 순서변경을 통한 막대 위치 변경하기
+</p>
+</div>
+<hr>
+<p>만약 누적 % 그래프가 아니라 늘어뜨리는 그래프일 경우에는 <code>position="dodge"</code>를 활용한다.</p>
+<p>여기서는 <code>diamonds</code> 데이터를 활용하여 예를 들어보자.</p>
+<pre class="r"><code>p &lt;- ggplot(diamonds, aes(x= cut, fill=color)) + geom_bar(position = &#39;dodge&#39;)+
+  stat_count(geom = &quot;text&quot;, colour = &quot;black&quot;, size = 3,
+             aes(label = ..count..), position=position_dodge(0.9), vjust=-.1)
+p</code></pre>
+<p><img src="/post/2020-07-26-ggplot.ko_files/figure-html/unnamed-chunk-11-1.png" width="2100" style="display: block; margin: auto;" /></p>
+<p>여기서는 <code>stat_count</code> 를 사용했다. 왜냐하면 예시에서 활용한 다이아몬드라는 데이터에서
+cut을 기준으로 어떤 color가 몇 개가 있는지 셌기 때문이다(count)</p>
+<p><code>geom_text</code>를 사용하려면, ggplot에서 x와 y에 들어갈 변수가 정해진 형태로 들어가야 한다.
+그래야 <code>geom_text</code>의 <code>aes</code>설정에서 y와 label을 설정하여 실행이 가능하다.</p>
+<pre class="r"><code>gg &lt;- ggplot(k, aes(x=year, y= value, fill=group))+geom_bar(stat=&quot;identity&quot;, position=&#39;dodge&#39;)+
+  scale_y_continuous(labels = percent)+
+  theme(legend.position = &#39;right&#39;) + # 범례 위치 정해주기.
+  geom_text(aes(y=value, label=value), position=position_dodge(0.9), vjust=-0.1, colour=&quot;black&quot;) 
+
+gg</code></pre>
+<p><img src="/post/2020-07-26-ggplot.ko_files/figure-html/unnamed-chunk-12-1.png" width="2100" style="display: block; margin: auto;" /></p>
+<p>너비는 geom_bar()에서 <code>width</code>로 조정 가능하다</p>
+<p>k &lt;- ddply(k, “year”, transform, label=cumsum(value))
+k</p>
+</div>
+<div id="geom_bar-색상-지정법" class="section level2">
+<h2><code>geom_bar()</code> 색상 지정법</h2>
+<p>ggplot에서는 막대 그래프, 점 그래프, 선 그래프 등 다양한 그래프들의 색상을 변경할 수 있습니다. 기존의 그래프에서 자동으로 보여주는 색상도 예쁘지만, 다른 색상으로 그래프를 그리고 싶다면 얼마든지 변경할 수 있습니다.</p>
+<p>여러 가지 방법이 있는데 여기서는 막대 그래프의 색상을 바꾸는 방법을 말씀드리겠습니다!</p>
+<ol style="list-style-type: decimal">
+<li><code>scale_fill_brewer(palette = "")</code> 이용하기: <code>Greys</code>, <code>Blues</code>, <code>Reds</code>, <code>Greens</code> 등 다양한 색상을 활용할 수 있다.
+library(RColorBrewer)
+<code>display.brewer.all()</code> 을 통해 팔레트 색상 보기 가능합니다.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
+<img src="https://i0.wp.com/moderndata.plot.ly/wp-content/uploads/2015/04/seq-300x211.jpg?resize=422%2C297" alt="R colorbrewer 팔레트"  />
+<p class="caption">
+Figure 8: R colorbrewer 팔레트
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>자신이 원하는 색 입히기. 구글에 color picker 검색해서 RGB 값에 따른 색상 확인이 가능하다.</li>
+</ol>
+<p>scale_fill_manual(values = c( “#FFFFFF”, “#FFCC00”, “#FF9900”,
+“#FF6600”, “#FF3300”)</p>
+<ol start="3" style="list-style-type: decimal">
+<li>ggsci 패키지 이용하기. 논문에서 쓰이는 것처럼 가능. #scale_fill_nejm / tron / d3 (적용가능한 색상의 수가 정해져 있으니 확인)</li>
+</ol>
+</div>
+<div id="축-및-범례-관련" class="section level1">
+<h1>축 및 범례 관련 —————————————————————</h1>
+<p>lims: x축이나 y축의 범위를 정함
+scale_x_continuous()
+scale_x_discrete(limits=c()): 순서 변경 가능.
+x축, y축 라벨 없애기: theme(axis.text = element_blank())
+gg
+gg+ scale_x_discrete(limits=c(“2020”,“2018”))+ theme(axis.text = element_blank(),
+axis.ticks = element_blank(), #ticks는 작대기 표기.
+axis.title = element_blank()) + coord_flip()</p>
+<p><code>axix.text.x</code>나 <code>axix.ticks.y</code> 등으로 x축 y축만 따로 지울수도 있다.</p>
+<p>k</p>
+<p>범례 위치는 <code>theme(legend.position = '')</code>을 활용하여 그래프 밖이나 안으로 배치할 수 있다.</p>
+<ol style="list-style-type: decimal">
+<li>그래프 밖에 자동으로 조정하기: bottom/ top / left/ right</li>
+<li>그래프 안으로: 수동으로. theme(legend.position=c(x,y))</li>
+</ol>
+<p>plot(g)</p>
+<p>mtcars
+str(mtcars)</p>
+<p>str(diamonds)</p>
+<p>p &lt;- ggplot(diamonds, aes(x= cut, fill=price)) + geom_bar(position = ‘fill’)
+#X &amp; fill: x와 y 모두 numeric 형태가 아닌 factor형태여야함.(ordinal)</p>
+<p>p &lt;- ggplot(mtcars, aes(x=cyl, fill=vs)) + geom_bar(position=‘dodge’)
+head(mtcars)
+df &lt;- mtcars %&gt;% select(mpg,wt,hp,cyl,vs,am,gear,carb) %&gt;% mutate_at(4:8,as.factor) %&gt;% as_tibble()
+df</p>
+<p>p &lt;- ggplot(df, aes(x= cyl, fill=gear, alpha=)) + geom_bar(position = ‘dodge’)
+p
+par(mfrow=c(2,2))</p>
+<p>geom_bar() #stat = count / identity
+#position = dodge(옆으로 나열하기)/ fill(위로 채우기)</p>
+<p>p + scale_fill_brewer(palette = “Pinks”) #
+p
+ggplotly(p)</p>
+</div>
+<div id="x와-y-변수-정해졌고-xfactor의-값이-y의-값에-11-대응됐을-때" class="section level1">
+<h1>X와 Y 변수 정해졌고, X(factor)의 값이 Y의 값에 1:1 대응됐을 때 ————————————</h1>
+<p>df %&gt;% group_by(cyl) %&gt;% summarise(mpg=mean(mpg),wt=mean(wt),hp=mean(hp)) %&gt;% as.data.frame()-&gt;df1</p>
+<p>g &lt;- ggplot(x, aes(x=sample , y = weight, fill= sample)) #fill: 색깔을 어떤 변수에 따라 다르게 할 것인가?
+g &lt;- g+ geom_bar(stat = ‘identity’) #theme(axis.text = element_text(angle = 30)) x축,y축 레이블이 길 경우
+g
+g&lt;-g + scale_fill_d3() #scale_fill_nejm / tron
+g</p>
+</div>
+<div id="그룹-만들기." class="section level1">
+<h1>그룹 만들기.</h1>
+<p>g &lt;- ggplot(x, aes(x=cell , y = weight, fill= sample)) #fill: 색깔을 어떤 변수에 따라 다르게 할 것인가?
+g &lt;- g+ geom_bar(stat = ‘identity’) #theme(axis.text = element_text(angle = 30)) x축,y축 레이블이 길 경우
+g + scale_fill_d3()</p>
+<p>총 합이 100%로 하여, 각 sample이 전체의 몇 %를 차지하는지 그래프로 나타내기 위해서는 <code>position='fill'</code> 함수를 사용한다.</p>
+<p>g &lt;- ggplot(x, aes(x=cell , y = weight, fill= sample)) #fill: 색깔을 어떤 변수에 따라 다르게 할 것인가?
+g &lt;- g+ geom_bar(stat = ‘identity’, position = ‘fill’)</p>
+<p>또한 y 축을 100%로 잡아야 하기 때문에 <code>scales_y_continuous</code>를 이용한다.</p>
+<p>g&lt;-g + scale_y_continuous(labels = percent)</p>
+<p>만약 바 그래프를 나란히 놓는 것이 아니라, 옆으로 나열하고 싶다면 <code>position='dodge'</code>를 사용한다.</p>
+<p>g &lt;- g+ geom_bar(stat = ‘identity’, position = ‘fill’) + coord_flip()
+g</p>
+<p>k &lt;- data.frame(
+year = rep(c(“2018”,“2020”), each=3),
+value = c(52.7, 35.4, 11.9, 45, 40, 15),
+group = rep(c(“1.6”,“1.6~2.5”,“2.5”),2)
+)
+k</p>
+<p>gg &lt;- ggplot(k, aes(x=year, y= value, fill=group))+geom_bar(stat=“identity”, position=‘fill’, width = 0.5)+
+scale_y_continuous(labels = percent)+
+theme(legend.position = ‘bottom’) # 범례 위치 조정하기: bottom/ top / left/ right</p>
+<p>gg</p>
+<p>너비는 geom_bar()에서 <code>width</code>로 조정 가능하다</p>
+</div>
+<div id="ggplot-색상-지정법" class="section level1">
+<h1>ggplot 색상 지정법 ———————————————————–</h1>
+<ol style="list-style-type: decimal">
+<li><p>scale_fill_brewer(palette = “Greens”) 이용하기. #Greys, Blues, Reds, Greens
+library(RColorBrewer)
+display.brewer.all() 을 통해 팔레트 색상 보기 가능.</p></li>
+<li><p>자신이 원하는 색 입히기. color picker 검색해서 보기 가능.
+scale_fill_manual(values = c( “#FFFFFF”, “#FFCC00”, “#FF9900”,
+“#FF6600”, “#FF3300”)</p></li>
+<li><p>ggsci 패키지 이용하기. 논문에서 쓰이는 것처럼 가능. #scale_fill_nejm / tron / d3 (적용가능한 색상의 수가 정해져 있으니 확인)</p></li>
+</ol>
+<p>plot(g)</p>
+<p>mtcars
+str(mtcars)</p>
+<p>str(diamonds)</p>
+<p>p &lt;- ggplot(diamonds, aes(x= cut, fill=price)) + geom_bar(position = ‘fill’)
+#X &amp; fill: x와 y 모두 numeric 형태가 아닌 factor형태여야함.(ordinal)</p>
+<p>p &lt;- ggplot(mtcars, aes(x=cyl, fill=vs)) + geom_bar(position=‘dodge’)
+head(mtcars)
+df &lt;- mtcars %&gt;% select(mpg,wt,hp,cyl,vs,am,gear,carb) %&gt;% mutate_at(4:8,as.factor) %&gt;% as_tibble()
+df</p>
+<p>p &lt;- ggplot(df, aes(x= cyl, fill=gear, alpha=)) + geom_bar(position = ‘dodge’)
+p
+par(mfrow=c(2,2))</p>
+<p>geom_bar() #stat = count / identity
+#position = dodge(옆으로 나열하기)/ fill(위로 채우기)</p>
+<p>p + scale_fill_brewer(palette = “Pinks”) #
+p
+ggplotly(p)</p>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">태그</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/ggplot/">ggplot</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/r/">R</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">이전 글</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/07/r-markdown-%EC%97%B0%EC%8A%B5/" data-tooltip="R markdown 연습">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">다음 글</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/07/ggplot/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/07/ggplot/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/07/ggplot/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 JangCci. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">이전 글</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/07/r-markdown-%EC%97%B0%EC%8A%B5/" data-tooltip="R markdown 연습">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">다음 글</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/07/ggplot/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/07/ggplot/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/07/ggplot/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F07%2Fggplot%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F07%2Fggplot%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F07%2Fggplot%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/6ce16f6e5d4e76c17fc7cb7c3b398194?s=110" alt="프로필 사진" />
+    
+    <h4 id="about-card-name">JangCci</h4>
+    
+      <div id="about-card-bio">言行一致</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Businessman
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('/images/sky.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2020\/07\/ggplot\/';
+          
+            this.page.identifier = '\/2020\/07\/ggplot\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'jangc94';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

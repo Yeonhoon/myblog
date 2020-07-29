@@ -1,0 +1,225 @@
+---
+title: GGplot
+author: JYH
+date: '2020-07-26'
+slug: ggplot
+draft: yes
+categories:
+  - R
+tags:
+  - ggplot
+  - R
+keywords:
+  - ~
+thumbnailImage: //example.com/image.jpg
+thumbnailImagePosition: ~
+summary: ggplot에서 막대그래프를 그리는 방법에 대해 알아보겠습니다.
+output:
+  html_document:
+    code_folding: hide
+    fig_height: 5
+    fig_width: 10
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+echo=T, eval=T, include=TRUE, message=FALSE, warning=FALSE, fig.align = "center", fig.height = 5, fig.widget = 5, cache=T, dpi = 300)
+
+library(ggplot2)
+library(knitr)
+library(dplyr)
+library(ggsci)
+library(scales)
+
+```
+
+---
+
+<!--more-->
+
+안녕하세요! 오늘은 R로 bar 차트를 그리는 방법에 대해 알아보겠습니다.
+
+```{r}
+x <- data.frame(
+  cell   = rep(c("X","Y","Z"), each=3),
+  sample = c("x1", "x2", "x3", "y1", "y2", "y3","z1","z2","z3"),
+  weight = c(0.32, 0.33, 0.5, 0.42, 0.21, 0.67,0.43,0.73,0.81)
+) %>% as_tibble()
+```
+
+```{r include=FALSE}
+
+pted <- read.csv("C:/Users/82105/Desktop/Python/radian/csv/pted_1820.csv") %>% as_tibble
+pted_df <- pted %>% select(y_pted, y_pted_t, pted_group, y_bei) %>% mutate_at(2,as.factor)
+pted_df %>% group_by(pted_group) %>%summarise(pted=round(mean(y_pted),2),bei=round(mean(y_bei),2))->y
+
+```
+
+
+보통 엑셀에서 바(bar) 차트를 그릴 때는 하나의 셀에 하나의 값이 대응되는 구조로 표를 구성합니다.
+
+그래서 저희도 X 변수와 Y 변수가 정해졌고, X 변수 값이 Y 변수의 값에 1:1 대응됐을 때 <br>
+차트를 그리는 방법에 대해서 얘기해보겠습니다.<br>
+
+
+```{r fig.cap="기본 막대 그래프", include=TRUE}
+
+g <- ggplot(x, aes(x=sample , y = weight, fill= sample)) #fill: 색깔을 어떤 변수에 따라 다르게 할 것인가?
+g <- g+ geom_bar(stat = 'identity') #theme(axis.text = element_text(angle = 30)) x축,y축 레이블이 길 경우 레이블을 회전시킬 수 있음.
+
+g
+
+```
+
+
+ggplot을 이용한 함수 그리기는 다음의 구조와 같습니다.
+ggplot("데이터 이름", aes(x="x변수", y="y변수", fill="바 색상을 담당할 변수"))
+
+참고로 바 차트가 아닌 선형 그래프나 점 그래프에서는 fill이 아니라 다른 값을 입력해야 합니다.
+이 부분은 다른 글에서 다루어 보겠습니다.
+
+
+<hr>
+
+이번에는 그룹별로 막대를 쌓는 그래프를 그려보겠습니다.<br>
+제가 예시로 사용하는 데이터에서는 X,Y,Z라는 3개의 그룹이 있습니다.
+X,Y,Z의 그룹으로 나누어 막대를 그려보겠습니다.
+
+```{r fig.cap="막대를 위로 쌓는 그래프"}
+
+g <- ggplot(x, aes(x=cell , y = weight, fill= sample)) #fill: 색깔을 어떤 변수에 따라 다르게 할 것인가?
+g <- g+ geom_bar(stat = 'identity') #theme(axis.text = element_text(angle = 30)) x축,y축 레이블이 길 경우
+g
+
+```
+
+위의 그래프와 이 그래프의 차이점은 `x`에 들어가는 변수와 `fill`에 들어가는 변수가 다르다는 것입니다. 
+
+만약 y축의 총합이 단순 수치의 합이 아니라 전체 중 얼마나 비중을 차지하는지 그래프로 나타내기 위해서는 <br>
+`geom_bar()`함수에서 `position='fill'` 코드를 사용합니다.
+
+```{r fig.cap="y축 총합이 1인 막대 그래프"}
+
+g <- ggplot(x, aes(x=cell , y = weight, fill= sample))
+
+g <- g+ geom_bar(stat = 'identity', position = 'fill')
+
+g
+
+```
+
+이전 그래프와는 다르게 X,Y,Z라는 세 그룹의 막대가 모두 1을 기준으로 가득 찬 것을 볼 수 있습니다.<br>
+만약 Y축이 1이 아니라 0부터 100%까지를 나타내는 그래프를 나타내고 싶다면,<br>
+`scales_y_continuous()` 코드를 붙여주면 됩니다.
+ 
+
+```{r fig.cap="y축 단위를 %로 맞추기"}
+
+g<-g + scale_y_continuous(labels = percent)
+g
+
+```
+
+
+세로 방향의 막대 그래프를, 가로방향으로 바꾸고 싶다면 `coord_flip()` 코드를  붙여줍니다.
+
+```{r fig.cap="가로 막대 그래프 만들기"}
+
+g <- g+ geom_bar(stat = 'identity', position = 'fill') + coord_flip()
+g
+
+```
+
+
+## 그래프 안에 수치 표시하기
+
+자 그러면 막대그래프를 그리는 방법은 어느 정도 배워보았습니다. 그렇다면 그래프 안에 수치는 어떻게 표시할 수 있을까요?
+
+다른 데이터를 활용해봅시다.
+
+```{r echo=FALSE, eval=TRUE}
+k <- data.frame(
+  year  = rep(c("2018","2020"), each=3),
+  value =  c(52.7, 35.4, 11.9, 45, 40, 15),
+  group = rep(c("1.6","1.6~2.5","2.5"),2)
+)
+k <- k %>% mutate(values=paste(value,"%",sep = ""))
+k
+```
+
+2018년도와 2020년에 3개의 그룹으로 구성이 되어 각 그룹이 몇 %를 차지하는지 나타내는 데이터입니다.
+2개년도별 각 그룹의 빈도를 보여주는 막대그래프를 만들고, 그 안에 각 그룹이 차지하는 수치를 넣어보겠습니다.
+
+```{r, echo=TRUE, fig.cap="막대 그래프에 수치 넣기"}
+
+gg <- ggplot(k, aes(x=year, y= value, fill=group))+
+  geom_bar(stat="identity", position="fill",width = 0.5)+
+  scale_y_continuous(labels = percent)+
+  theme(legend.position = 'right') + # 범례 위치 조정하기: bottom/ top / left/ right
+  geom_text(aes(label=values), position=position_fill(vjust = 0.5), colour="black") 
+gg
+
+```
+
+여기서는 `geom_text()` 코드를 추가하였습니다. `label` 그러니까 차트 안에 수치를 어떤 변수로 넣을 것인지를 물어보는 것인데요. 저는 미리 만들어둔 values라는 기존 값에 '%'를 붙여서 만든 변수를 label로 넣었습니다. 
+
+또한 `position_fill`을 통해 수치를 표시해주십니다. `position_fill`인 이유는 코드 첫줄에서 볼 수 있듯이 `fill`이라는 코드로 그래프가 그려졌기 때문입니다. `vjust`는 label을 막대 어디에 위치시킬 것인지를 입력하는 코드입니다. 저는 각 막대의 정중앙에 위치시켰기 때문에 `vjust = 0.5`로 사용하였습니다. label의 색상은 `colour`를 통해 바꾸어줄 수 있습니다.
+
+(참고로 막대의 너비 조정은 `geom_bar()`에서 `width`옵션으로 조정 가능합니다.)
+
+
+만약 막대그래프의 순서가 마음에 들지 않을 경우, 순서를 변경해줄 수 있습니다.
+'1.6'인 그룹이 맨 아래로, '2.5'인 그룹이 맨 위로 이동시켜보겠습니다. 계속 `aes`부분에서 `fill`을 이용해 막대 그래프를 그리고 있으니 `scale_fill_discrete` 코드를 이용해야 합니다.
+
+
+```{r echo=TRUE, fig.cap="범례 순서변경을 통한 막대 위치 변경하기"}
+
+gg + scale_fill_discrete(breaks=c("2.5","1.6~2.5","1.6"))
+
+
+```
+
+
+
+<hr>
+
+만약 누적 % 그래프가 아니라 늘어뜨리는 그래프일 경우에는 `position="dodge"`를 활용한다.
+
+여기서는 `diamonds` 데이터를 활용하여 예를 들어보자.
+
+
+```{r}
+
+p <- ggplot(diamonds, aes(x= cut, fill=color)) + geom_bar(position = 'dodge')+
+  stat_count(geom = "text", colour = "black", size = 3,
+             aes(label = ..count..), position=position_dodge(0.9), vjust=-.1)
+p
+
+```
+
+
+여기서는 `stat_count` 를 사용했다. 왜냐하면 예시에서 활용한 다이아몬드라는 데이터에서
+cut을 기준으로 어떤 color가 몇 개가 있는지 **count**했기 때문입니다.
+
+`geom_text`를 사용하려면, ggplot에서 x와 y에 들어갈 변수가 정해진 형태로 들어가야 한다.
+그래야 `geom_text`의 `aes`설정에서 y와 label을 설정하여 실행이 가능합니다.
+
+```{r}
+
+gg <- ggplot(k, aes(x=year, y= value, fill=group))+geom_bar(stat="identity", position='dodge')+
+  scale_y_continuous(labels = percent)+
+  theme(legend.position = 'right') + # 범례 위치 정해주기.
+  geom_text(aes(y=value, label=value), position=position_dodge(0.9), vjust=-0.1, colour="black") 
+
+gg
+
+```
+
+
+<hr><hr><hr>
+자, 오늘은 R에서 ggplot을 이용한 막대그래프를 그리는 방법에 대해 배워봤습니다!
+
+궁금하신 점은 댓글로 달아주세요~!
